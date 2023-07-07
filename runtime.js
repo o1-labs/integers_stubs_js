@@ -150,6 +150,12 @@ function integers_uint32_to_string(i) {
    return caml_new_string(i.value.toString());
 }
 
+//Provides: integers_uint32_to_hexstring
+//Requires: caml_new_string
+function integers_uint32_to_hexstring(i) {
+   return caml_new_string(i.value.toString(16));
+}
+
 //Provides: integers_uint64_add
 //Requires: caml_int64_add
 function integers_uint64_add(x, y) {
@@ -320,6 +326,12 @@ function integers_uint64_to_int64(i) {
 //Requires: caml_int64_format, caml_new_string
 function integers_uint64_to_string(i) {
     return caml_int64_format(caml_new_string("%u"), i);
+}
+
+//Provides: integers_uint64_to_hexstring
+//Requires: caml_int64_format, caml_new_string
+function integers_uint64_to_hexstring(i) {
+    return caml_int64_format(caml_new_string("%x"), i);
 }
 
 //Provides: integers_uint8_of_string
