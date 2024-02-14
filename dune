@@ -3,5 +3,6 @@
  (public_name integers_stubs_js)
  (js_of_ocaml
   (javascript_files ./runtime.js)
+  (wasm_files runtime.wat)
   )
  (libraries zarith_stubs_js))
