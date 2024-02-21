@@ -1,5 +1,13 @@
+(env (_ (js_of_ocaml (targets js wasm))))
+
 (executable
  (name test)
  (modes js)
  (js_of_ocaml (flags --pretty))
  (libraries integers integers_stubs_js))
+
+; Note: at the time of writing, this requires Nodejs with a nightly build of V8.
+(rule
+  (alias runtest_js)
+  (deps test.bc.wasm.js)
+  (action (run node %{deps})))
