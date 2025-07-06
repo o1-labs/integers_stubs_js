@@ -10,9 +10,9 @@ bug-reports: "https://github.com/o1-labs/integers_stubs_js/issues"
 depends: [
   "dune" {>= "3.0"}
   "ocaml" {>= "4.14" & <= "5.3"}
-  "zarith" {= "1.7"}
-  "zarith_stubs_js" {= "v0.14.1"}
   "integers" {with-test & = "0.6.0"}
+  "zarith"
+  "zarith_stubs_js"
   "js_of_ocaml"
   "odoc" {with-doc}
 ]
