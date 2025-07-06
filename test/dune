@@ -1,6 +1,6 @@
 (test
  (name test)
- (modes native)
+ (modes js native)
  (js_of_ocaml
   (flags +nat.js --source-map --pretty))
  (libraries integers integers_stubs_js)
