@@ -1,2 +1,2 @@
-(lang dune 1.6)
+(lang dune 3.0)
 (name integers_stubs_js)
