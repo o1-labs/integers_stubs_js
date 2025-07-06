@@ -18,7 +18,7 @@
   dune
   (integers :with-test)
   js_of_ocaml
-  (ocaml (and (>= 4.14) (<= 5.3)))
+  (ocaml (and (>= 4.14) (< 5.3)))
   zarith
   zarith_stubs_js
 ))
