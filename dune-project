@@ -16,10 +16,10 @@
  (description "Javascript stubs for the integers library in js_of_ocaml")
  (depends
   dune
+  (integers :with-test)
+  js_of_ocaml
   (ocaml (and (>= 4.14) (<= 5.3)))
   zarith
   zarith_stubs_js
-  (integers :with-test)
-  js_of_ocaml
 ))
 
