@@ -11,7 +11,7 @@ depends: [
   "dune" {>= "3.0"}
   "ocaml" {>= "4.14" & <= "5.3"}
   "zarith_stubs_js"
-  "integers" {with-test & >= "0.6.0"}
+  "integers" {with-test & = "0.6.0"}
   "js_of_ocaml"
   "odoc" {with-doc}
 ]
