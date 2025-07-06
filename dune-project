@@ -19,7 +19,7 @@
   (ocaml (and (>= 4.14) (<= 5.3)))
   zarith
   zarith_stubs_js
-  (integers (and :with-test (= 0.6.0)))
+  (integers :with-test)
   js_of_ocaml
 ))
 
