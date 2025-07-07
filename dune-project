@@ -15,6 +15,7 @@
  (synopsis "Javascript stubs for the integers library in js_of_ocaml")
  (description "Javascript stubs for the integers library in js_of_ocaml")
  (depends
+  (bisect_ppx :with-test)
   dune
   (integers :with-test)
   js_of_ocaml

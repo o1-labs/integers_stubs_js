@@ -8,6 +8,7 @@ license: "MIT"
 homepage: "https://github.com/o1-labs/integers_stubs_js/"
 bug-reports: "https://github.com/o1-labs/integers_stubs_js/issues"
 depends: [
+  "bisect_ppx" {with-test}
   "dune" {>= "3.0"}
   "integers" {with-test}
   "js_of_ocaml"
