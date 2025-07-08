@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  run_checks:
+    strategy:
+      matrix:
+        ocaml_version: ["4.14", "5.0", "5.1", "5.2"]
+        os: ["macos-latest", "ubuntu-latest", "ubuntu-22.04", "ubuntu-24.04", "ubuntu-24.04-arm"]
+    runs-on: ${{ matrix.os }}
+    name: Install and run basic tests
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Setup OCaml ${{ matrix.ocaml_version }}
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ matrix.ocaml_version }}
+          # https://github.com/ocaml/setup-ocaml/issues/211#issuecomment-1058882386
+          # disable-cache: true
+
+      - name: Setup OCaml environment
+        run: |
+          eval $(opam env)
+          opam install merlin ocamlformat
+          opam install . --with-test --deps-only
+
+      - name: Build and run tests
+        run: |
+          eval $(opam env)
+          dune build
+          dune runtest

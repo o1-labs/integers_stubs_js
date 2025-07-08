@@ -1,5 +1,8 @@
-(executable
+(test
  (name test)
- (modes js)
- (js_of_ocaml (flags --pretty))
- (libraries integers integers_stubs_js))
+ (modes js native)
+ (js_of_ocaml
+  (flags --source-map --pretty))
+ (libraries integers integers_stubs_js)
+ (instrumentation
+  (backend bisect_ppx)))
